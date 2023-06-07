@@ -2,9 +2,7 @@
 <br />
 
 This GitHub repository provides a Terraform code for setting up an AWS CloudFront distribution with integration to Amazon Route 53, AWS Certificate Manager (ACM), and an S3 bucket. The Terraform code automates the provisioning and configuration process, enabling efficient content delivery, secure communication, and global availability.
-The code provisions an S3 bucket as the origin server for CloudFront, where you can store your static or dynamic content. It also utilizes ACM to request and manage SSL/TLS certificates, ensuring secure communication between CloudFront and end-users.
-
-By running the Terraform code, a CloudFront distribution is created and configured to use the S3 bucket as the origin. The code allows you to customize default behaviors, cache settings, and other advanced features based on your requirements.
+The code provisions an S3 bucket as the origin server for CloudFront, where you can store your static or dynamic content. It also utilizes ACM to request and manage SSL/TLS certificates, ensuring secure communication between CloudFront and end-users.By running the Terraform code, a CloudFront distribution is created and configured to use the S3 bucket as the origin. 
 
 Integration with Amazon Route 53 is established by creating DNS records using Terraform. The code enables you to associate your custom domain with the CloudFront distribution, allowing users to access your content using your domain name.
 
