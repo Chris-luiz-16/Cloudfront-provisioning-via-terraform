@@ -11,7 +11,7 @@ variable "aws_secret_key" {
 variable "aws_access_key" {
   description = "Access key of the IAM user"
   type        = string
-  default     = "Access_key"
+  default     = "<Access_key>"
 }
 
 variable "mime_types" {
@@ -33,6 +33,11 @@ variable "mime_types" {
   }
 }
  
+variable "path" {
+description = "the Path where your static website is placed in ec2-instance in order to copy to s3 bucket"
+default = "/home/ec2-user/<path>"
+}
+
 variable "domain_name" {
 description = "Domain name that should point to S3 or cloudfront endpoint"
   default = "<name of the domain that needs to point to cloudfront>"
@@ -40,5 +45,4 @@ description = "Domain name that should point to S3 or cloudfront endpoint"
 
 variable "hosted_zone" {
 descrition = "Hosted_zone name"
-  default = "Name of the hosted zone in route53"
-}
+  default = "<Name of the hosted zone in route53>"
