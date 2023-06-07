@@ -19,6 +19,7 @@ This GitHub repository provides a streamlined and automated approach to set up A
   * [Git installation](#git-installation)
   * [Ec2-instance-IAM user or role update ](#ec2-instance-iam-user-or-role-update )
 * [Customizing based on your needs](#customizing-based-on-your-needs)
+* [Execution of the code](#execution-of-the-code)
 
 ## Prerequisites
 Things to install before execution the code
@@ -115,6 +116,22 @@ descrition = "Hosted_zone name"
   default = "<Name of the hosted zone in route53>"
 }
 ```
+You can edit the Enpoint whitelisting in the cloudfront.tf file where you need to mention the country code. I've whitelisted the below regions. You can edit the required countries in cloudfront.tf in line 32
+```hcl
+  restrictions {
+    geo_restriction {
+      restriction_type = "whitelist"
+      locations        = ["US", "CA", "GB", "DE", "IN"]
+    }
+  }
+```
 
+## Execution of the code
 
+After making the required changes, you can execute the below commands
+```sh
+terraform init
+terraform plan
+terraform apply 
+```
 
