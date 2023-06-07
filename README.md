@@ -18,7 +18,7 @@ This GitHub repository provides a streamlined and automated approach to set up A
   * [Terraform Installation Linux](#terraform-installation-linux)
   * [Git installation](#git-installation)
   * [Ec2-instance-IAM user or role update ](#ec2-instance-iam-user-or-role-update )
-*
+* [Customizing based on your needs](#customizing-based-on-your-needs)
 
 ## Prerequisites
 Things to install before execution the code
@@ -61,7 +61,8 @@ Make sure to have IAM user or role to have the following permmissions
 ```
 
 ## Customizing based on your needs
-I have set a variable.tf file where you can mention the name of the domain, access_key/secret_key, path of the website, name of the hosted zone etc.
+I have set a variable.tf file where you can mention the name of the domain, access_key/secret_key, path of the website, name of the hosted zone etc. Please add the required fields
+
 ```hcl
 
 variable "region" {
@@ -99,7 +100,11 @@ variable "mime_types" {
   }
 }
 
-# 
+variable "path" {
+description = "the Path where your static website is placed in ec2-instance in order to copy to s3 bucket"
+default = "/home/ec2-user/<path>"
+}
+
 variable "domain_name" {
 description = "Domain name that should point to S3 or cloudfront endpoint"
   default = "<name of the domain that needs to point to cloudfront>"
@@ -107,7 +112,7 @@ description = "Domain name that should point to S3 or cloudfront endpoint"
 
 variable "hosted_zone" {
 descrition = "Hosted_zone name"
-  default = "Name of the hosted zone in route53"
+  default = "<Name of the hosted zone in route53>"
 }
 ```
 
