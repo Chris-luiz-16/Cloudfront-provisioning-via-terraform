@@ -75,13 +75,13 @@ resource "aws_s3_bucket_policy" "attach" {
 
 
 resource "aws_s3_object" "content" {
-  for_each = fileset("/home/ec2-user/chrisich.fun", "**/*.*")
+  for_each = fileset("${var.path}", "**/*.*")
 
   bucket       = aws_s3_bucket.test.id
   key          = each.key
-  source       = "/home/ec2-user/chrisich.fun/${each.key}"
+  source       = "${var.path}/${each.key}"
   content_type = lookup(var.mime_types, element(split(".", each.key), length(split(".", each.key)) - 1))
-  etag         = filemd5("/home/ec2-user/chrisich.fun/${each.key}")
+  etag         = filemd5("${var.path}/${each.key}")
 }
 
 

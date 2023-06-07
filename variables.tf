@@ -17,12 +17,18 @@ variable "mime_types" {
     "woff"  = "application/font-woff"
     "woff2" = "application/font-woff2"
     "jpg"   = "image/jpeg"
+    "mp4"   = "video/mp4"
   }
 }
 
 locals {
   domain_name = "http://(aws_s3_bucket_website_configuration.static.website_endpoint)"
 
+}
+
+variable "path" {
+description ="The default path of your s3 static webdoc root" 
+default = "/var/www/html"
 }
 
 

@@ -44,6 +44,8 @@ resource "aws_cloudfront_distribution" "static" {
     acm_certificate_arn = aws_acm_certificate.ssl.arn
     ssl_support_method = "sni-only"
   }
+
+depends_on = [aws_route53_record.acm,aws_acm_certificate_validation.check ]
 }
 
 resource "aws_route53_record" "cloudfront" {
