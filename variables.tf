@@ -1,9 +1,22 @@
 variable "region" {
+description = "Default region where your s3 bucket get's created in my case I've choosen ap-south-1/Mumbai"
   default = "ap-south-1"
 }
 
+variable "aws_secret_key" {
+  description = "Secret key of IAM User"
+  type        = string
+  default     = "<Secret Key>"
+}
+variable "aws_access_key" {
+  description = "Access key of the IAM user"
+  type        = string
+  default     = "Access_key"
+}
+
 variable "mime_types" {
-  type = map(any)
+  description= "This is to set mime_types for your static website."
+  type = map
   default = {
     "css"   = "text/css"
     "html"  = "text/html"
@@ -17,25 +30,15 @@ variable "mime_types" {
     "woff"  = "application/font-woff"
     "woff2" = "application/font-woff2"
     "jpg"   = "image/jpeg"
-    "mp4"   = "video/mp4"
   }
 }
-
-locals {
-  domain_name = "http://(aws_s3_bucket_website_configuration.static.website_endpoint)"
-
-}
-
-variable "path" {
-description ="The default path of your s3 static webdoc root" 
-default = "/var/www/html"
-}
-
-
+ 
 variable "domain_name" {
-  default = "blog.chrisich.fun"
+description = "Domain name that should point to S3 or cloudfront endpoint"
+  default = "<name of the domain that needs to point to cloudfront>"
 }
 
 variable "hosted_zone" {
-  default = "chrisich.fun"
+descrition = "Hosted_zone name"
+  default = "Name of the hosted zone in route53"
 }
