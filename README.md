@@ -116,7 +116,7 @@ descrition = "Hosted_zone name"
   default = "<Name of the hosted zone in route53>"
 }
 ```
-You can edit the Enpoint whitelisting in the cloudfront.tf file where you need to mention the country code. I've whitelisted the below regions. You can edit the required countries in cloudfront.tf in line 32
+You can edit the Enpoint whitelisting in the cloudfront.tf file where you need to mention the country code in ***[ISO 3166-1-alpha-2](https://www.iso.org/obp/ui/#search)*** . I've whitelisted the below regions. You can edit the required countries in cloudfront.tf in line 32.
 ```hcl
   restrictions {
     geo_restriction {
