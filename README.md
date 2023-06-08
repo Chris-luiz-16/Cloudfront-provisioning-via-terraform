@@ -10,6 +10,7 @@ When a user requests content, the CloudFront distribution, powered by its global
 
 This GitHub repository provides a streamlined and automated approach to set up AWS CloudFront with Route 53, ACM, and an S3 bucket using Terraform. The code can be easily executed, providing a scalable and robust content delivery solution for your applications or websites.
 <br />
+
 ![Cloudfront](https://github.com/Chris-luiz-16/Cloudfront-provisioning-via-terraform/assets/128575317/350b8052-1a55-4cd3-b478-2ebb9cb782d5)
 
 ## Table of contents
