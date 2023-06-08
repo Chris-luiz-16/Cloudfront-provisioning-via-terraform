@@ -15,7 +15,7 @@ This GitHub repository provides a streamlined and automated approach to set up A
 
 ## Table of contents
 * [Prerequisites](#prerequisites)
-  * [Terraform Installation Linux](#terraform-installation-linux)
+  * [Terraform Installation Linux](#terraform-installation-linux)
   * [Git installation](#git-installation)
   * [Ec2-instance-IAM user or role update ](#ec2-instance-iam-user-or-role-update )
 * [Customizing based on your needs](#customizing-based-on-your-needs)
